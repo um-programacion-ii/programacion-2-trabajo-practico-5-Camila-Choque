@@ -1,4 +1,7 @@
 package Repository;
+import Entidades.Proyecto;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface DepartamentoRepository {
+@Repository
+public interface DepartamentoRepository extends JpaRepository<Proyecto, Long> {
 }
