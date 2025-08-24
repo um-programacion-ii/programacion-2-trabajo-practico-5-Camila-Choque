@@ -110,10 +110,39 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 > 💡 **Nota**: Esta estimación considera la complejidad de configurar múltiples bases de datos, Docker y el aprendizaje de JPA. El tiempo incluye la configuración de profiles y la containerización de las bases de datos.
 
 ## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
+- **Nombre y Apellido**: Camila Choque
+- **Legajo**: 62069
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
+## 🔧 Informacion de Ejecuccion
+1- Clonar el repositorio
+-     git clone
+2- Acceder al directorio
+-     cd TP5
+## 🐳 Instrucciones para Docker
+
+### Levantar Bases de Datos
+```bash
+# Levantar MySQL y PostgreSQL
+docker compose up -d
+```
+### Verificar que los contenedores estén corriendo
+    docker compose ps
+
+### Ver logs de los contenedores
+    docker compose logs -f
+
+
+## 🔄 Ejecutar Aplicación con Diferentes Profiles
+
+ - Con H2 (desarrollo)
+         ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+
+- Con MySQL
+-     ./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+
+- Con PostgreSQL
+-     ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
 
 ## 📋 Requisitos Previos
 
