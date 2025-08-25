@@ -114,35 +114,65 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 - **Legajo**: 62069
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
+
 ## 🔧 Informacion de Ejecuccion
-1- Clonar el repositorio
--     git clone
-2- Acceder al directorio
--     cd TP5
+
+### 1- Clonar el repositorio
+     git clone git@github.com:um-programacion-ii/programacion-2-trabajo-practico-5-Camila-Choque.git
+### 2- Acceder al directorio
+     cd TP5
 ## 🐳 Instrucciones para Docker
 
-### Levantar Bases de Datos
+### 3- Levantar Bases de Datos
 ```bash
 # Levantar MySQL y PostgreSQL
 docker compose up -d
 ```
-### Verificar que los contenedores estén corriendo
+### 4- Verificar que los contenedores estén corriendo
     docker compose ps
 
-### Ver logs de los contenedores
+### 5- Ver logs de los contenedores
     docker compose logs -f
 
+## ▶️ Ejecutar Aplicación con Diferentes Profiles
 
-## 🔄 Ejecutar Aplicación con Diferentes Profiles
-
- - Con H2 (desarrollo)
+###  Con H2 (desarrollo)
          ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+###  Con MySQL
+     ./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+###  Con PostgreSQL
+     ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
 
-- Con MySQL
--     ./mvnw spring-boot:run -Dspring-boot.run.profiles=mysql
+## ✅ Ejecutar Test
+    ./mvnw test
 
-- Con PostgreSQL
--     ./mvnw spring-boot:run -Dspring-boot.run.profiles=postgres
+## 🐞 Detener Bases de Datos
+
+### Detener contenedores
+    docker compose down
+### Detener y eliminar volúmenes
+    docker compose down -v
+    
+## 📌 Endpoints de la API
+
+| Recurso           | Método | Endpoint                  | Descripción                                       |
+| ----------------- | ------ | ------------------------- | ------------------------------------------------- |
+| **Empleados**     | GET    | `/api/empleados`          | Obtiene la lista de todos los empleados           |
+|                   | GET    | `/api/empleados/{id}`     | Obtiene la información de un empleado por su ID   |
+|                   | POST   | `/api/empleados`          | Crea un nuevo empleado                            |
+|                   | PUT    | `/api/empleados/{id}`     | Actualiza la información de un empleado existente |
+|                   | DELETE | `/api/empleados/{id}`     | Elimina un empleado por su ID                     |
+| **Departamentos** | GET    | `/api/departamentos`      | Lista todos los departamentos                     |
+|                   | GET    | `/api/departamentos/{id}` | Obtiene un departamento por su ID                 |
+|                   | POST   | `/api/departamentos`      | Crea un nuevo departamento                        |
+|                   | PUT    | `/api/departamentos/{id}` | Actualiza los datos de un departamento existente  |
+|                   | DELETE | `/api/departamentos/{id}` | Elimina un departamento por su ID                 |
+| **Proyectos**     | GET    | `/api/proyectos`          | Lista todos los proyectos                         |
+|                   | GET    | `/api/proyectos/{id}`     | Obtiene un proyecto por su ID                     |
+|                   | POST   | `/api/proyectos`          | Crea un nuevo proyecto                            |
+|                   | PUT    | `/api/proyectos/{id}`     | Actualiza la información de un proyecto existente |
+|                   | DELETE | `/api/proyectos/{id}`     | Elimina un proyecto por su ID                     |
+
 
 ## 📋 Requisitos Previos
 
